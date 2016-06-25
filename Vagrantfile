@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
     apt-get install -y python-pip
-    apt-get install -y postgresql-8.3
+    apt-get install -y postgresql-9.3
     pip install --upgrade pip
     pip install django==1.9.7
   SHELL
