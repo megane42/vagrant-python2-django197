@@ -14,11 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.memory = 1024
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y python-pip
-    apt-get install -y postgresql-9.4
-    pip install --upgrade pip
-    pip install django==1.9.7
-  SHELL
+  config.vm.provision "shell", path: "install_django_postgres.sh"
+  config.vm.provision "shell", path: "install_docker.sh"
 end
